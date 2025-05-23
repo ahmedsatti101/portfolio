@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { Zain } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
 
 const zain = Zain({
   subsets: ["latin"],
@@ -37,9 +38,24 @@ export default function RootLayout({
     <html lang="en">
       <body
         ref={bodyRef}
-        className={`min-xl:bg-transparent min-xl:rounded-full min-xl:bg-no-repeat min-xl:min-h-screen ${zain.variable} font-sans
-                   min-xl:bg-[radial-gradient(at_var(--x)_var(--y),#376ab2_0%,#2c447b_100%)] bg-[#2c447b]`}
+        className={`min-xl:rounded-full min-xl:bg-no-repeat min-xl:min-h-screen ${zain.variable} font-sans text-[#a5a5a5]
+                   min-xl:bg-[radial-gradient(circle_75px_at_var(--x)_var(--y),#2c447b_20%,#193051_100%)] bg-[#193051]`}
+        style={{ '--x': '50%', '--y': '50%' } as React.CSSProperties}
       >
+        <title>Ahmed Mohamed</title>
+        <header className="flex w-full items-center justify-between min-md:text-[22px]">
+          <div className="max-md:m-2 flex gap-2 min-md:p-4">
+            <Image src="/brand-github.svg" alt="Github logo" width={30} height={30} className="min-md:h-[50px] min-md:w-[40px]"/>
+            <Image src="/brand-linkedin.svg" alt="Linkedin logo" width={30} height={30} className="min-md:h-[50px] min-md:w-[40px]" />
+          </div>
+          <div className="flex-row-reverse m-3">
+            <button className="max-md:hidden p-2">About</button>
+            <button className="max-md:hidden p-2">Experience</button>
+            <button className="max-md:hidden p-2">Projects</button>
+            <button className="max-md:hidden p-2">Skills</button>
+            <button className="max-md:border-1 border-solid rounded-lg max-md:px-1 min-md:p-2 max-md:text-lg">Contact me</button>
+          </div>
+        </header>
         {children}
       </body>
     </html>
