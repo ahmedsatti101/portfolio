@@ -48,7 +48,7 @@ export default function RootLayout({
             <Image src="/brand-github.svg" alt="Github logo" width={30} height={30} className="min-md:h-[50px] min-md:w-[40px]"/>
             <Image src="/brand-linkedin.svg" alt="Linkedin logo" width={30} height={30} className="min-md:h-[50px] min-md:w-[40px]" />
           </div>
-          <div className="flex-row-reverse m-3">
+          <div className="flex-row-reverse m-3 lg:text-3xl">
             <button className="max-md:hidden p-2">About</button>
             <button className="max-md:hidden p-2">Experience</button>
             <button className="max-md:hidden p-2">Projects</button>
