@@ -15,10 +15,12 @@ export const Carousel = () => {
   const [data, setData] = useState<exp[]>();
 
   const nextSlide = () => {
+    if (!data) return;
     setSlide(slide === data?.length - 1 ? 0 : slide + 1);
   };
 
   const prevSlide = () => {
+    if (!data) return;
     setSlide(slide === 0 ? data?.length - 1 : slide - 1);
   };
 
@@ -33,53 +35,48 @@ export const Carousel = () => {
 
   return (
     <>
-      <p className="text-xl min-md:text-2xl m-5">Experience</p>
-      <div className="flex relative mt-2 justify-center items-center">
+      <p className="m-5 text-xl min-md:text-2xl lg:text-3xl">Experience</p>
+      <div className="flex mt-2 justify-center items-center">
         <Image
           src="/chevron-left.svg"
           alt="Left arrow"
           width={100}
           height={58}
-          className="absolute size-8 left-4 hover:cursor-pointer"
+          className="size-8 left-4 hover:cursor-pointer"
           onClick={prevSlide}
         />
-        {data?.map((exp: exp, index: number) => {
-          return (
-            <div className="grid grid-cols-2 gap-2" key={index}>
-              <div>
-                <p className={`${slide === index ? "" : "hidden"}`}>{exp.company}</p>
-                <p className={`${slide === index ? "" : "hidden"}`}>{exp.date}</p>
-                <p className={`${slide === index ? "" : "hidden"}`}>{exp.role}</p>
+
+        <div className="flex-1 flex justify-center">
+          {data?.map((exp: exp, index: number) => {
+            return (
+              <div
+                className={`${slide === index ? "flex" : "hidden"} w-full max-w-lg justify-between items-center`}
+                key={index}
+              >
+                <div>
+                  <p className="text-xl min-md:text-2xl lg:text-3xl">{exp.company}</p>
+                  <p className="text-xl min-md:text-2xl lg:text-3xl">{exp.date}</p>
+                  <p className="text-xl min-md:text-2xl lg:text-3xl">{exp.role}</p>
+                </div>
+                <div>
+                  <img
+                    src={exp.logo}
+                    alt={`${exp.company} logo`}
+                    className="rounded-lg size-20"
+                  />
+                </div>
               </div>
-              <div>
-              <img
-                src={exp.logo}
-                alt={`${exp.company} logo`}
-                className={`rounded-lg size-20 ${slide === index ? "" : "hidden"} col-span-2`}
-              />
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
         <Image
           src="/chevron-right.svg"
           alt="Right arrow"
           width={100}
           height={100}
-          className="absolute size-8 right-4 hover:cursor-pointer"
+          className="size-8 right-4 hover:cursor-pointer"
           onClick={nextSlide}
         />
-        {/* <span className="flex absolute bottom-0"> */}
-        {/*   {data?.map((_: any, index: number) => { */}
-        {/*     return ( */}
-        {/*       <button */}
-        {/*         key={index} */}
-        {/*         onClick={undefined} */}
-        {/*         className={`size-4 m-0.5 rounded-full border-none outline-none hover:cursor-pointer bg-white ${slide === index ? "" : "disabled:bg-grey-600"}`} */}
-        {/*       ></button> */}
-        {/*     ); */}
-        {/*   })} */}
-        {/* </span> */}
       </div>
     </>
   );
