@@ -45,8 +45,30 @@ export const Carousel = () => {
           className="size-8 left-4 hover:cursor-pointer"
           onClick={prevSlide}
         />
-
-        <div className="flex-1 flex justify-center">
+        <div className="max-md:hidden flex-1 flex justify-center">
+          {data?.slice(0, 3).map((exp: exp, index: number) => {
+            return (
+              <div
+                className="flex w-full max-w-lg justify-evenly items-center"
+                key={index}
+              >
+                <div>
+                  <p className="text-xl lg:text-3xl">{exp.company}</p>
+                  <p className="text-xl lg:text-3xl">{exp.date}</p>
+                  <p className="text-md lg:text-3xl">{exp.role}</p>
+                </div>
+                <div>
+                  <img
+                    src={exp.logo}
+                    alt={`${exp.company} logo`}
+                    className="rounded-lg size-12"
+                  />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <div className="min-md:hidden flex-1 flex justify-center">
           {data?.map((exp: exp, index: number) => {
             return (
               <div
