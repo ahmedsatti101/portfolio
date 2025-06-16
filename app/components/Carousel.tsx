@@ -14,6 +14,20 @@ export const Carousel = () => {
   const [slide, setSlide] = useState(0);
   const [data, setData] = useState<exp[]>();
 
+  const splitIntoSlides = () => {
+    const slides = [];
+
+    if (!data) return;
+
+    for (let i = 0; i < data?.length; i += 3) {
+      slides.push(data?.slice(i, i + 3));
+    }
+
+    return slides;
+  };
+
+  const slides = splitIntoSlides() || [];
+
   const nextSlide = () => {
     if (!data) return;
     setSlide(slide === data?.length - 1 ? 0 : slide + 1);
@@ -46,24 +60,30 @@ export const Carousel = () => {
           onClick={prevSlide}
         />
         <div className="max-md:hidden flex-1 flex justify-center">
-          {data?.slice(0, 3).map((exp: exp, index: number) => {
+          {slides?.map((s: exp[], idx: number) => {
             return (
               <div
-                className="flex w-full max-w-lg justify-evenly items-center"
-                key={index}
+                key={idx}
+                className={`${slide === idx ? "flex" : "hidden"} w-full max-w-lg justify-evenly items-center`}
               >
-                <div>
-                  <p className="text-xl lg:text-3xl">{exp.company}</p>
-                  <p className="text-xl lg:text-3xl">{exp.date}</p>
-                  <p className="text-md lg:text-3xl">{exp.role}</p>
-                </div>
-                <div>
-                  <img
-                    src={exp.logo}
-                    alt={`${exp.company} logo`}
-                    className="rounded-lg size-12"
-                  />
-                </div>
+                {s?.map((item: exp, index: number) => {
+                  return (
+                    <>
+                      <div key={index}>
+                        <p className="text-xl lg:text-3xl">{item.company}</p>
+                        <p className="text-xl lg:text-3xl">{item.date}</p>
+                        <p className="text-md lg:text-3xl">{item.role}</p>
+                      </div>
+                      <div>
+                        <img
+                          src={item.logo}
+                          alt={`${item.company} logo`}
+                          className="rounded-lg size-12"
+                        />
+                      </div>
+                    </>
+                  );
+                })}
               </div>
             );
           })}
@@ -76,9 +96,15 @@ export const Carousel = () => {
                 key={index}
               >
                 <div>
-                  <p className="text-xl min-md:text-2xl lg:text-3xl">{exp.company}</p>
-                  <p className="text-xl min-md:text-2xl lg:text-3xl">{exp.date}</p>
-                  <p className="text-xl min-md:text-2xl lg:text-3xl">{exp.role}</p>
+                  <p className="text-xl min-md:text-2xl lg:text-3xl">
+                    {exp.company}
+                  </p>
+                  <p className="text-xl min-md:text-2xl lg:text-3xl">
+                    {exp.date}
+                  </p>
+                  <p className="text-xl min-md:text-2xl lg:text-3xl">
+                    {exp.role}
+                  </p>
                 </div>
                 <div>
                   <img
