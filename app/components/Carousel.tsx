@@ -67,7 +67,7 @@ export const Carousel = () => {
           width={100}
           height={58}
           className="size-8 left-4 hover:cursor-pointer"
-          onClick={window.innerWidth <= 767 ? prevSlide : prevSlideDesktop}
+          onClick={typeof window !== undefined ? window.innerWidth <= 767 ? prevSlide : prevSlideDesktop : undefined}
         />
         <div className="max-md:hidden flex-1 flex justify-center w-full">
           {slides?.map((s: exp[], idx: number) => {
