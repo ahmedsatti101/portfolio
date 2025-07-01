@@ -1,3 +1,5 @@
+import { Carousel } from "./components/Carousel";
+
 export default function Home() {
   return (
     <>
@@ -14,6 +16,7 @@ export default function Home() {
         Lorem ispum Lorem ispum Lorem Lorem ispum Lorem ispum Lorem ispum Lorem
         ispum Lorem ispum Lorem ispum
       </p>
+      <Carousel />
     </>
   );
 }
