@@ -38,6 +38,16 @@ export const Carousel = () => {
     setSlide(slide === 0 ? data?.length - 1 : slide - 1);
   };
 
+  const nextSlideDesktop = () => {
+    if (!data) return;
+    setSlide(slide === slides?.length - 1 ? 0 : slide + 1);
+  };
+
+  const prevSlideDesktop = () => {
+    if (!data) return;
+    setSlide(slide === 0 ? slides?.length - 1 : slide - 1);
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch("/api/experiences");
@@ -57,19 +67,19 @@ export const Carousel = () => {
           width={100}
           height={58}
           className="size-8 left-4 hover:cursor-pointer"
-          onClick={prevSlide}
+          onClick={window.innerWidth <= 767 ? prevSlide : prevSlideDesktop}
         />
-        <div className="max-md:hidden flex-1 flex justify-center">
+        <div className="max-md:hidden flex-1 flex justify-center w-full">
           {slides?.map((s: exp[], idx: number) => {
             return (
               <div
                 key={idx}
-                className={`${slide === idx ? "flex" : "hidden"} w-full max-w-lg justify-evenly items-center`}
+                className={`${slide === idx ? "flex" : "hidden"} space-x-15 items-center`}
               >
                 {s?.map((item: exp, index: number) => {
                   return (
-                    <>
-                      <div key={index}>
+                    <div key={index}>
+                      <div>
                         <p className="text-xl lg:text-3xl">{item.company}</p>
                         <p className="text-xl lg:text-3xl">{item.date}</p>
                         <p className="text-md lg:text-3xl">{item.role}</p>
@@ -81,7 +91,7 @@ export const Carousel = () => {
                           className="rounded-lg size-12"
                         />
                       </div>
-                    </>
+                    </div>
                   );
                 })}
               </div>
@@ -123,7 +133,7 @@ export const Carousel = () => {
           width={100}
           height={100}
           className="size-8 right-4 hover:cursor-pointer"
-          onClick={nextSlide}
+          onClick={window.innerWidth >= 768 ? nextSlideDesktop : nextSlide}
         />
       </div>
     </>
