@@ -13,7 +13,7 @@ either traditional email and password, using their Google or Facebook accounts.`
     stack: ["TypeScript", "React Native", "Expo", "Tailwind", "AWS"],
     links: {
       github: "https://github.com/ahmedsatti101/hunter",
-      app: ""
+      app: undefined
     },
     status: "Active development",
     duration: "Jun 2025 - Present",
@@ -38,7 +38,7 @@ interested.`,
     stack: ["Go", "Google Cloud Platform"],
     links: {
       github: "https://github.com/ahmedsatti101/gomail",
-      app: ""
+      app: undefined
     },
     status: "Completed",
     duration: "Jun 2025 - Jul 2025",
@@ -53,7 +53,11 @@ is very effienct and does not take time or a cognitive restart.`
     intro: `Cycling events is a platform I built for a small business to advertise their
 cycling events to the community. People can sign up for these events and add them to Google
 calendar.`,
-    about: ``,
+    about: `Cycling events is a project I built as part of a Lauchpad project provided by Tech
+Returners to apply what I have learned during my bootcamp with Northcoders. Cycling events was to
+be used by a small business who wanted a platform where they can create and share events with members
+of the public. As a minimum viable product, the platform needed to allow business staff to create
+events, signing up to events by non-staff and adding events to Google Calendar for those who signed up.`,
     stack: ["TypeScript", "React", "Tailwind", "AWS", "AWS SDK", "AWS Cognito", "AWS DynamoDB"],
     links: {
       github: "https://github.com/ahmedsatti101/events-platform-project",
@@ -61,15 +65,20 @@ calendar.`,
     },
     status: "Completed",
     duration: "Jul 2024 - Aug 2024",
-    why: ``
+    why: undefined
   },
   {
     name: "Northcoders news",
-    intro: ``,
-    about: ``,
+    intro: `Northcoders news is a social news and discussion website that provides articles
+divided into topics. The website also allows users to comment on an article as well as upvote or
+downvote it.`,
+    about: `Northcoders news is a project I built while I was in Northcoders bootcamp to consolidate
+my learning by performing CRUD operations through the frontend. It consumes an API that allows users
+to view articles that belong to a certain topic and sort them in ascending or descending order. Users
+can also post comments on each of those articles and delete them later and upvote or downvote articles.`,
     stack: ["TypeScript", "React", "Vite"],
     links: {
-      github: "https://github.com/ahmedsatti101/gomail",
+      github: "https://github.com/ahmedsatti101/northcoders-news",
       app: "https://react-northcoders-news.netlify.app"
     },
     status: "Completed",
@@ -78,8 +87,11 @@ calendar.`,
   },
   {
     name: "Northcoders news API",
-    intro: ``,
-    about: ``,
+    intro: `This API is the backend service for Northcoders News.`,
+    about: `I built this API during the Northcoders bootcamp to learn to access application data
+programmatically and using a database for data persistence. The API provides several endpoints for
+a social discussion application that provide articles and their comments, topics and performing CRUD
+opertions like deleting a comment, adding a new article or updating the votes on an article.`,
     stack: ["JavaScript", "Node.js", "Express.js", "PostgreSQL"],
     links: {
       github: "https://github.com/ahmedsatti101/northcoders-news-api",
