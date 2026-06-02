@@ -9,6 +9,7 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useEffect, useState } from "react";
+import DrawerComponent from "@/components/drawer";
 
 const jetBrains = JetBrains_Mono({
   variable: "--font-jetbrains-mono"
@@ -20,6 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [windowSize, setWindowSize] = useState<number>();
+  const [openDrawer, setOpenDrawer] = useState<boolean>(false);
 
   useEffect(() => {
     setWindowSize(window.innerWidth);
@@ -72,13 +74,14 @@ export default function RootLayout({
               )}
 
               {windowSize <= 425 && (
-                <IconButton sx={{ mr: 2 }}>
-                  <MenuIcon />
+                <IconButton sx={{ mr: 2 }} onClick={() => setOpenDrawer(true)}>
+                  <MenuIcon sx={{ color: '#000' }} />
                 </IconButton>
               )}
             </Toolbar>
           </AppBar>
         </Box>
+        <DrawerComponent openState={openDrawer} close={() => setOpenDrawer(false)} />
         <main className="flex-grow">
           {children}
         </main>
