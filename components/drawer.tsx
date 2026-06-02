@@ -1,0 +1,32 @@
+import OpenInNewOutlined from "@mui/icons-material/OpenInNewOutlined";
+import Drawer from "@mui/material/Drawer";
+
+type Props = {
+  openState: boolean;
+  close: () => void;
+};
+
+export default function DrawerComponent({ openState, close }: Props) {
+  return (
+    <div>
+      <Drawer
+        anchor="top"
+        open={openState}
+        onClose={close}
+        elevation={0}
+        slotProps={{ paper: { sx: { backgroundColor: '#e7c299' } } }}
+      >
+        <div className="text-xl font-semibold m-3">
+          <p><a href="#about">About me</a></p>
+          <p className="mt-2"><a href="mailto:ahmedysatti@gmail.com">Contact</a></p>
+          <p className="mt-2">
+            <a href="/next.svg" target="_blank" rel="noopener noreferrer">
+              Resume
+              <OpenInNewOutlined className="ml-1" />
+            </a>
+          </p>
+        </div>
+      </Drawer>
+    </div>
+  )
+}
