@@ -10,7 +10,7 @@ their applications to enable them to chase a response after their applications. 
 like to keep screenshots of a job description for future reference, will have the ability to
 upload them along with the details of the job. Hunter also provides three ways of signing in
 either traditional email and password, using their Google or Facebook accounts.`,
-    stack: ["TypeScript", "React Native", "Expo", "Tailwind", "AWS"],
+    stack: ["TypeScript", "Tailwind", "Expo", "AWS", "React Native"],
     links: {
       github: "https://github.com/ahmedsatti101/hunter",
       app: undefined
