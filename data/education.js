@@ -12,7 +12,7 @@ module.exports = [
       "PASS"
     ],
     completed: "Jul 2023",
-    location: undefined
+    location: "Manchester, UK"
   },
   {
     institution: "British Educational Schools",
