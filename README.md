@@ -3,7 +3,7 @@ Hello :wave:, my name is Ahmed Mohamed and this repository includes the code to 
 Connect with me on my [LinkedIn](https://www.linkedin.com/in/ahmed-mohamed-566115221)!
 
 ## How to run locally
-### Prerequisite
+### Prerequisites
 - [Git](https://git-scm.com/install)
 - [Bun](https://bun.com/docs/installation)
 
