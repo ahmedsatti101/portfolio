@@ -6,7 +6,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import React, { useState } from "react";
 import experience from "../data/experience.js";
 
-export default function Experience() {
+export default function Experience({ hidden }: { hidden: boolean }) {
   const [openExp, setOpenExp] = useState({});
 
   const handleClickExp = (idx: any) => {
@@ -17,7 +17,7 @@ export default function Experience() {
   };
 
   return (
-    <div className="mr-7 hidden lg:block">
+    <div className={`${hidden ? 'mr-7 hidden lg:block' : ''}`}>
       <p className="font-extrabold text-xl uppercase">Experience</p>
 
       <List sx={{ bgcolor: '#e7c299', borderRadius: 4 }}>

@@ -6,7 +6,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import React, { useState } from "react";
 import education from "../data/education.js";
 
-export default function Education() {
+export default function Education({ hidden }: { hidden: boolean }) {
   const [openEdu, setOpenEdu] = useState({});
 
   const handleClickEdu = (idx: any) => {
@@ -17,7 +17,7 @@ export default function Education() {
   };
 
   return (
-    <div className="ml-7 hidden lg:block">
+    <div className={`${hidden ? 'ml-7 hidden lg:block' : ''}`}>
       <p className="font-extrabold text-xl uppercase">Education</p>
       <List sx={{ bgcolor: '#e7c299', borderRadius: 4 }}>
         {education.map((edu, idx) => {
@@ -33,13 +33,13 @@ export default function Education() {
                 }}
               >
                 <p className="font-medium bg-[#da9c56] mr-6 p-2 rounded-[10px]">{idx}</p>
-                <p className="font-medium text-xl pr-8">{edu.institution}</p>
-                <p>{edu.location}</p>
+                <p className="font-medium text-xl">{edu.institution}</p>
                 {isOpen ? <ExpandLess /> : <ExpandMore />}
               </ListItemButton>
 
               <Collapse in={isOpen} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
+                  <p className="font-semibold pl-4 text-lg">Location: {edu.location}</p>
                   <ListItemButton
                     disableRipple
                     sx={{
