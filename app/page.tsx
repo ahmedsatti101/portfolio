@@ -16,14 +16,14 @@ export default function Home() {
       </div>
 
       <div className="lg:grid lg:grid-cols-3">
-        <Experience />
+        <Experience hidden />
 
         <Projects />
 
-        <Education />
+        <Education hidden />
       </div>
 
-      <About />
+      <About hidden />
     </div>
   )
 }
