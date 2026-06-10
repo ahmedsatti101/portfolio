@@ -1,3 +1,4 @@
+import Link from "next/link.js";
 import projects from "../data/projects.js";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
@@ -8,8 +9,10 @@ export default function Projects() {
 
       {projects.map((project, idx) => (
         <div className="relative" key={idx}>
-          <p className="font-extrabold text-lg">{project.name} <ArrowForwardIcon sx={{ position: 'absolute', right: 0 }} /></p>
-          <p className="font-medium">{project.intro}</p>
+          <Link href={`/project/${project.name}`}>
+            <p className="font-extrabold text-lg">{project.title} <ArrowForwardIcon sx={{ position: 'absolute', right: 0 }} /></p>
+            <p className="font-medium">{project.intro}</p>
+          </Link>
 
           <div className="grid grid-cols-3 gap-1 mb-5">
             {project.stack.map((tech, idx) => (
