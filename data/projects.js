@@ -1,6 +1,7 @@
 module.exports = [
   {
-    name: "Hunter: Job Tracker",
+    title: "Hunter: Job Tracker",
+    name: "hunter",
     intro: `Hunter is a cross platform I made to help with my job search. It allows users to
 record job applications they've made, upload screenshots of the job description and notify
 users about their applications after a certain period.`,
@@ -27,7 +28,8 @@ of a job application on the home screen such as title, company and status withou
 cluttered with all the information all at once.`
   },
   {
-    name: "Gomail: Terminal based email client",
+    title: "Gomail: Terminal based email client",
+    name: "gomail",
     intro: `Gomail is an idea turned into a side project to see if I could use my terminal
 to view, read and maybe send emails without using the Gmail app in my browser.`,
     about: `Gomail is a terminal based tool that allows those with a Gmail account to view
@@ -49,7 +51,8 @@ emails everyday so having the ability to run a single command to check my inbox 
 is very effienct and does not take time or a cognitive restart.`
   },
   {
-    name: "Cycling events: Platform for event advertising",
+    title: "Cycling events: Platform for event advertising",
+    name: "cycling-events",
     intro: `Cycling events is a platform I built for a small business to advertise their
 cycling events to the community. People can sign up for these events and add them to Google
 calendar.`,
@@ -68,7 +71,8 @@ events, signing up to events by non-staff and adding events to Google Calendar f
     why: undefined
   },
   {
-    name: "Northcoders news",
+    title: "Northcoders news",
+    name: "northcoders-news",
     intro: `Northcoders news is a social news and discussion website that provides articles
 divided into topics. The website also allows users to comment on an article as well as upvote or
 downvote it.`,
@@ -86,7 +90,8 @@ can also post comments on each of those articles and delete them later and upvot
     why: undefined
   },
   {
-    name: "Northcoders news API",
+    title: "Northcoders news API",
+    name: "northcoders-news-api",
     intro: `This API is the backend service for Northcoders News.`,
     about: `I built this API during the Northcoders bootcamp to learn to access application data
 programmatically and using a database for data persistence. The API provides several endpoints for

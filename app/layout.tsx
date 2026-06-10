@@ -49,17 +49,6 @@ export default function RootLayout({
             elevation={0}
           >
             <Toolbar style={{ paddingRight: 0 }}>
-              {windowSize > 425 && (
-                <div className="mt-7 flex flex-col uppercase text-2xl font-extrabold">
-                  <p>
-                    Ahmed Mohamed
-                  </p>
-                  <p>
-                    Software Engineer
-                  </p>
-                </div>
-              )}
-
               <Box sx={{ flexGrow: 1 }} />
 
               {windowSize > 425 && (
