@@ -18,9 +18,9 @@ export default function Experience({ hidden }: { hidden: boolean }) {
 
   return (
     <div className={`${hidden ? 'mr-7 hidden lg:block' : ''}`}>
-      <p className="font-extrabold text-xl uppercase">Experience</p>
+      <p className="font-extrabold text-xl lg:text-2xl uppercase">Experience</p>
 
-      <List sx={{ bgcolor: '#e7c299', borderRadius: 4 }}>
+      <List sx={{ bgcolor: '#e0ab72', borderRadius: 4 }}>
         {experience.map((exp, idx) => {
           const isOpen = !!openExp[idx];
 
@@ -33,14 +33,14 @@ export default function Experience({ hidden }: { hidden: boolean }) {
                   '&:hover': { backgroundColor: 'transparent' }
                 }}
               >
-                <p className="font-medium bg-[#da9c56] mr-6 p-2 rounded-[10px]">{idx}</p>
-                <p className="font-medium text-xl">{exp.title}</p>
+                <p className="font-medium bg-[#da913f] mr-6 p-2 rounded-[10px]">{idx}</p>
+                <p className="font-medium text-lg lg:text-xl">{exp.title}</p>
                 {isOpen ? <ExpandLess /> : <ExpandMore />}
               </ListItemButton>
 
               <Collapse in={isOpen} timeout="auto" unmountOnExit>
                 <List component="div">
-                  <p className="font-semibold pl-4 text-lg">Company: {exp.company}</p>
+                  <p className="font-semibold pl-4 text-lg lg:text-xl">Company: {exp.company}</p>
 
                   <ListItemButton
                     disableRipple
@@ -49,10 +49,10 @@ export default function Experience({ hidden }: { hidden: boolean }) {
                       '&:hover': { backgroundColor: 'transparent' }
                     }}
                   >
-                    <p>{exp.description}</p>
+                    <p className="lg:text-xl">{exp.description}</p>
                   </ListItemButton>
 
-                  <p className="pl-4 pt-2 font-semibold text-lg">Achievements</p>
+                  <p className="pl-4 pt-2 font-semibold text-lg lg:text-xl">Achievements</p>
                   <ListItemButton
                     disableRipple
                     sx={{
@@ -61,7 +61,7 @@ export default function Experience({ hidden }: { hidden: boolean }) {
                     }}>
                     <ul>
                       {exp.achieved.map((item, idx) => (
-                        <li key={idx} className="pb-2">{item}</li>
+                        <li key={idx} className="pb-2 lg:text-xl">{item}</li>
                       ))}
                     </ul>
                   </ListItemButton>

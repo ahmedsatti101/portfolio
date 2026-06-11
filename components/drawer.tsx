@@ -17,11 +17,11 @@ export default function DrawerComponent({ openState, close }: Props) {
         elevation={0}
         slotProps={{ paper: { sx: { backgroundColor: '#e7c299' } } }}
       >
-        <div className="text-xl font-semibold m-3">
+        <div className="text-lg font-semibold m-3">
           <Link href="/about">About me</Link>
           <p className="mt-2"><a href="mailto:ahmedysatti@gmail.com">Contact</a></p>
           <p className="mt-2">
-            <a href="/next.svg" target="_blank" rel="noopener noreferrer">
+            <a href="/CV-ahmed-mohamed.pdf" target="_blank" rel="noopener noreferrer">
               Resume
               <OpenInNewOutlined className="ml-1" />
             </a>

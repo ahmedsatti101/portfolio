@@ -11,8 +11,13 @@ export default function Home() {
       <p className="uppercase font-extrabold lg:text-4xl text-2xl">Ahmed Mohamed</p>
       <p className="uppercase font-extrabold lg:text-2xl text-[15px]">Software Engineer</p>
 
-      <div className="mt-4 mb-4">
-        <p className="font-medium lg:text-xl lg:w-full lg:max-w-200">Lorem ipsum nostrud ad et. Exercitation nulla esse duis id. Quis fugiat sed. In ut consectetur sit. Consequat ullamco aliquip do deserunt deserunt commodo pariatur. Veniam ad tempor enim consectetur.</p>
+      <div className="mt-4 mb-4 lg:mb-10">
+        <p className="font-medium lg:text-xl lg:w-full lg:max-w-300">
+          Hi I'm Ahmed and I'm a self taught software engineer looking for a full time role in tech.
+          I have experience working as an associate software engineer at Tech Returners building
+          a platform for small businesses to advertise their events to the public. My skillset is
+          focused on full stack web and mobile development with TypeScript, React, React Native and AWS.
+        </p>
       </div>
 
       <div className="lg:grid lg:grid-cols-3">
