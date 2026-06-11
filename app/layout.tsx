@@ -41,6 +41,9 @@ export default function RootLayout({
       lang="en"
       className={`${jetBrains.className} h-full antialiased`}
     >
+      <head>
+        <title>Ahmed Mohamed</title>
+      </head>
       <body className="min-h-full flex flex-col bg-[#e1c09b]">
         <Box>
           <AppBar
