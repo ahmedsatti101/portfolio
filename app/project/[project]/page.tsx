@@ -8,7 +8,7 @@ export default async function Project({ params }: { params: Promise<{ project: s
 
   return (
     <div className="min-h-screen flex flex-col ml-7 mr-7">
-      <Link href="/">
+      <Link href="/" className="lg:hidden">
         <ArrowBackOutlined sx={{ mb: 2 }} fontSize="large" />
       </Link>
       <div className="border-b-2 pb-3">
@@ -17,8 +17,8 @@ export default async function Project({ params }: { params: Promise<{ project: s
             {data?.title}
           </h1>
           <div className="w-fit flex flex-col lg:flex-row gap-2 md:gap-4 font-semibold">
-            <span className="border font-extrabold px-2 py-0.5 bg-black text-[#e5d3bf] uppercase" id="grid-status">{data?.status}</span>
-            <span className="border font-extrabold px-2 py-0.5 uppercase" id="grid-duration">{data?.duration}</span>
+            <span className="border font-extrabold px-2 py-0.5 lg:text-xl bg-black text-[#e1c09b] uppercase" id="grid-status">{data?.status}</span>
+            <span className="border font-extrabold px-2 py-0.5 lg:text-xl uppercase" id="grid-duration">{data?.duration}</span>
           </div>
         </div>
       </div>
@@ -31,23 +31,23 @@ export default async function Project({ params }: { params: Promise<{ project: s
             {data?.stack.map((tech, idx) => (
               <p
                 key={idx}
-                className="text-sm p-1 font-extrabold border-[1.5px] bg-[#ebdccb] lg:hover:bg-black lg:hover:text-[#ebdccb]">
+                className="text-md lg:text-lg p-1 font-extrabold border-[1.5px] bg-[#e1ccb2] lg:hover:bg-black lg:hover:text-[#e1ccb2]">
                 {tech}
               </p>
             ))}
           </div>
 
           <div className="border-t-2 pt-5">
-            <h3 className="text-medium font-bold uppercase tracking-wider mb-2 opacity-50">Project links</h3>
-            <div className="text-medium uppercase space-y-1 font-bold">
+            <h3 className="text-md font-bold uppercase tracking-wider mb-2 opacity-50">Project links</h3>
+            <div className="text-md lg:text-lg uppercase space-y-1 font-bold">
               <a href={data?.links.github} className="block hover:underline flex items-center justify-between">
                 <span>GitHub Repo</span>
-                <span className="text-2xl">→</span>
+                <span className="text-4xl">→</span>
               </a>
               {data?.links.app && (
-                <a href={data?.links.app} className="block hover:underline flex items-center justify-between">
+                <a href={data?.links.app} className="text-md lg:text-lg block hover:underline flex items-center justify-between">
                   <span>App</span>
-                  <span className="text-2xl">→</span>
+                  <span className="text-4xl">→</span>
                 </a>
               )}
             </div>
@@ -57,7 +57,7 @@ export default async function Project({ params }: { params: Promise<{ project: s
         <div className="border-t-2 lg:border-t-0 md:col-span-2 space-y-8 pt-5">
           <div>
             <h3 className="text-medium font-bold uppercase tracking-wider mb-3 opacity-50">01. About the Project</h3>
-            <p id="grid-about" className="leading-relaxed font-semibold text-portfolio-dark/90">
+            <p id="grid-about" className="leading-relaxed font-semibold lg:text-xl">
               {data?.about}
             </p>
           </div>
@@ -66,7 +66,7 @@ export default async function Project({ params }: { params: Promise<{ project: s
             <div>
               <h3 className="text-medium font-bold uppercase tracking-wider mb-3 opacity-50 text-portfolio-accent">02. Problem & Solution</h3>
               <div className="space-y-4">
-                <p id="grid-problem" className="leading-relaxed font-semibold">
+                <p id="grid-problem" className="leading-relaxed font-semibold lg:text-xl">
                   {data?.why}
                 </p>
               </div>

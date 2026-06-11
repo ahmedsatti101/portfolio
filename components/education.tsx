@@ -18,8 +18,8 @@ export default function Education({ hidden }: { hidden: boolean }) {
 
   return (
     <div className={`${hidden ? 'ml-7 hidden lg:block' : ''}`}>
-      <p className="font-extrabold text-xl uppercase">Education</p>
-      <List sx={{ bgcolor: '#e7c299', borderRadius: 4 }}>
+      <p className="font-extrabold text-xl lg:text-2xl uppercase">Education</p>
+      <List sx={{ bgcolor: '#e0ab72', borderRadius: 4 }}>
         {education.map((edu, idx) => {
           const isOpen = !!openEdu[idx];
 
@@ -32,14 +32,14 @@ export default function Education({ hidden }: { hidden: boolean }) {
                   '&:hover': { backgroundColor: 'transparent' }
                 }}
               >
-                <p className="font-medium bg-[#da9c56] mr-6 p-2 rounded-[10px]">{idx}</p>
-                <p className="font-medium text-xl">{edu.institution}</p>
+                <p className="font-medium bg-[#da913f] mr-6 p-2 rounded-[10px]">{idx}</p>
+                <p className="font-medium text-lg lg:text-xl">{edu.institution}</p>
                 {isOpen ? <ExpandLess /> : <ExpandMore />}
               </ListItemButton>
 
               <Collapse in={isOpen} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
-                  <p className="font-semibold pl-4 text-lg">Location: {edu.location}</p>
+                  <p className="font-semibold pl-4 text-lg lg:text-xl">Location: {edu.location}</p>
                   <ListItemButton
                     disableRipple
                     sx={{
@@ -49,7 +49,7 @@ export default function Education({ hidden }: { hidden: boolean }) {
                   >
                     <ul>
                       {edu.qualifications.map((qual, idx) => (
-                        <li key={idx} className="pt-1">
+                        <li key={idx} className="pt-1 lg:text-lg">
                           {qual} - {edu.results[idx]}
                         </li>
                       ))}

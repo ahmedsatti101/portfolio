@@ -41,7 +41,7 @@ export default function RootLayout({
       lang="en"
       className={`${jetBrains.className} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#e5d3bf]">
+      <body className="min-h-full flex flex-col bg-[#e1c09b]">
         <Box>
           <AppBar
             position="static"
@@ -52,11 +52,11 @@ export default function RootLayout({
               <Box sx={{ flexGrow: 1 }} />
 
               {windowSize > 425 && (
-                <div className="flex flex-row items-center gap-6 mr-6 text-xl font-medium">
+                <div className="flex flex-row items-center gap-6 mr-6 text-2xl font-medium">
                   <a href="mailto:ahmedysatti@gmail.com" className="hover:text-black/[.50]">
                     <p>Contact</p>
                   </a>
-                  <a href="/next.svg" target="_blank" rel="noopener noreferrer" className="hover:text-black/[.50]">
+                  <a href="/CV-ahmed-mohamed.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-black/[.50]">
                     <p>Resume</p>
                   </a>
                 </div>
