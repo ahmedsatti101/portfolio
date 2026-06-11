@@ -20,7 +20,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [windowSize, setWindowSize] = useState<number>();
+  const [windowSize, setWindowSize] = useState<number>(320);
   const [openDrawer, setOpenDrawer] = useState<boolean>(false);
 
   useEffect(() => {
