@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import experience from "../data/experience.js";
 
 export default function Experience({ hidden }: { hidden: boolean }) {
-  const [openExp, setOpenExp] = useState({});
+  const [openExp, setOpenExp] = useState<any>({});
 
   const handleClickExp = (idx: any) => {
     setOpenExp((prev: any) => ({

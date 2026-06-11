@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import education from "../data/education.js";
 
 export default function Education({ hidden }: { hidden: boolean }) {
-  const [openEdu, setOpenEdu] = useState({});
+  const [openEdu, setOpenEdu] = useState<any>({});
 
   const handleClickEdu = (idx: any) => {
     setOpenEdu((prev: any) => ({
