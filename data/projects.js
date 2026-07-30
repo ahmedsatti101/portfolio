@@ -34,16 +34,14 @@ cluttered with all the information all at once.`
 to view, read and maybe send emails without using the Gmail app in my browser.`,
     about: `Gomail is a terminal based tool that allows those with a Gmail account to view
 and read emails in the terminal. Its written in Go and uses the Gmail Go package to talk to
-the Gmail API and the Bubble Tea framework for the UI. Even though this project is completed,
-I'm planning on revisting it so that it becomes something I can use and by those who are
-interested.`,
+the Gmail API and the Bubble Tea framework for the UI.`,
     stack: ["Go", "Google Cloud Platform"],
     links: {
       github: "https://github.com/ahmedsatti101/gomail",
-      app: undefined
+      app: "https://github.com/ahmedsatti101/gomail/releases/tag/v2"
     },
     status: "Completed",
-    duration: "Jun 2025 - Jul 2025",
+    duration: "Jul 2026 - Jul 2026",
     why: `Three words, Context switching fatigue. When I'm working on something, I switch frequently
 between my terminal and browser sometimes my brower has a lot of tabs open and I'm also switching between
 those which becomes stressful and drains my mental energy which makes me vulnerable to losing focus. I get
